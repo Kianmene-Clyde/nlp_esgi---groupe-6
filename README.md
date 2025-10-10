@@ -288,7 +288,7 @@ en un json:
 
 ```
 {
-   "job": "send_message",
+   "task": "send_message",
    "receiver": "the python teacher",
    "content": "when is the next class?",
 }
