@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/7c5f993cb3154677a3562ebf0ffba095/artifacts
+end_time: 1764575126750
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 7c5f993cb3154677a3562ebf0ffba095
+run_name: sneaky-grub-298
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764575126730
+status: 3
+tags: []
+user_id: torel

@@ -1,3 +1,6 @@
-data/
 __pycache__/
 *~
+config.yml
+wiki/
+questions.csv
+*.zip

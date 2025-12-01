@@ -34,7 +34,7 @@ def run_evaluate_retrieval(config, rag=None):
     rag = rag or models.get_model(config)
     score = evaluate_retrieval(rag, FILENAMES, DF.dropna())
 
-    description = str(config["model"])
+    description = str(config.get("model", {}))
     _push_mlflow_result(score, config, description)
     
     return rag
@@ -88,16 +88,18 @@ def evaluate_retrieval(rag, filenames, df_question):
     rag.load_files(filenames)
     ranks = []
     for _, row  in df_question.iterrows():
+        # For each question, get the 5 most relevant chunks 
         chunks = rag._get_context(row.question)
         try:
+            # Find the rank of the chunk containing the answer based on text_answering column
             rank = next(i for i, c in enumerate(chunks) if row.text_answering in c)
         except StopIteration:
             rank = 0
-
+        # append rank if correct chunk found, else 0
         ranks.append(rank)
         
     df_question["rank"] = ranks
-            
+    # Higer is the rank, worst is the score (meaning simscore not accurate enough?) but a mean is computen to flatten results
     mrr = np.mean([0 if r == 0 else 1 / r for r in ranks])
 
     return {

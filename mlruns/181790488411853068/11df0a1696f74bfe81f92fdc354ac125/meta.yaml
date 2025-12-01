@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/11df0a1696f74bfe81f92fdc354ac125/artifacts
+end_time: 1764571623228
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 11df0a1696f74bfe81f92fdc354ac125
+run_name: serious-mole-473
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764571623198
+status: 3
+tags: []
+user_id: torel

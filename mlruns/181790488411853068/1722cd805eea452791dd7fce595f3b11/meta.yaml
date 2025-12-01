@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/1722cd805eea452791dd7fce595f3b11/artifacts
+end_time: 1764576211474
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 1722cd805eea452791dd7fce595f3b11
+run_name: orderly-rook-413
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764576211453
+status: 3
+tags: []
+user_id: torel

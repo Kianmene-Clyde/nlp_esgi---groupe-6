@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/ddc18287576842708da45bcb301bb027/artifacts
+end_time: 1764575741712
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: ddc18287576842708da45bcb301bb027
+run_name: traveling-hen-579
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764575741695
+status: 3
+tags: []
+user_id: torel

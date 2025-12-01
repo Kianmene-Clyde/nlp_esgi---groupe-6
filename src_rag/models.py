@@ -21,10 +21,11 @@ def get_model(config):
     else:
         return RAG()
 
-
+# Si config n'est pas vide, alors chunk_size est dans config["model"]
 class RAG:
-    def __init__(self, chunk_size=256):
+    def __init__(self, chunk_size=256, overlap=0):
         self._chunk_size = chunk_size
+        self._overlap = overlap 
         self._embedder = None
         self._loaded_files = set()
         self._texts = []
@@ -66,7 +67,7 @@ class RAG:
 
     def _compute_chunks(self, texts):
         return sum(
-            (chunk_markdown(txt, chunk_size=self._chunk_size) for txt in texts),
+            (chunk_markdown(txt, chunk_size=self._chunk_size, overlap=self._overlap) for txt in texts), 
             [],
         )
 
@@ -108,6 +109,7 @@ Answer:"""
     def _get_context(self, query):
         query_embedding = self.embed_questions([query])
         sim_scores = query_embedding @ self._corpus_embedding.T
+        # return list of best sim scores chunks indexes then sort indexes from lowest to highest
         indexes = list(np.argsort(sim_scores[0]))[-5:]
         return [self._chunks[i] for i in indexes]
     
@@ -156,14 +158,42 @@ def parse_markdown_sections(md_text: str) -> list[dict[str, str]]:
     return sections
 
 
-def chunk_markdown(md_text: str, chunk_size: int = 128) -> list[dict]:
+def chunk_markdown(md_text: str, chunk_size: int = 128, overlap: int = 0) -> list[dict]:
+    """
+    Découpe le texte markdown en chunks avec overlap optionnel.
+    
+    Args:
+        md_text: Le texte markdown à découper
+        chunk_size: Taille de chaque chunk en tokens
+        overlap: Nombre de tokens qui se chevauchent entre chunks
+    
+    Returns:
+        Liste de chunks (strings)
+    """
+    if overlap >= chunk_size:
+        raise ValueError(f"Overlap ({overlap}) doit être inférieur à chunk_size ({chunk_size})")
+    
     parsed_sections = parse_markdown_sections(md_text)
     chunks = []
 
     for section in parsed_sections:
         tokens = tokenizer.encode(section["content"])
-        token_chunks = [tokens[i:i + chunk_size] for i in range(0, len(tokens), chunk_size) if tokens[i:i + chunk_size]]
+        
+        # Calculer le step (distance entre le début de chaque chunk)
+        step = chunk_size - overlap
+        
+        # Créer les chunks avec overlap
+        token_chunks = []
+        for i in range(0, len(tokens), step):
+            chunk = tokens[i:i + chunk_size]
+            if chunk:  # Ignorer les chunks vides
+                token_chunks.append(chunk)
+            
+            # Arrêter si on a dépassé la fin
+            if i + chunk_size >= len(tokens):
+                break
 
+        # Décoder chaque chunk
         for token_chunk in token_chunks:
             chunk_text = tokenizer.decode(token_chunk)
             chunks.append(chunk_text)

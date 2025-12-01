@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/d73f0fd70dfd43239514aeda384b33c7/artifacts
+end_time: 1764522805061
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: d73f0fd70dfd43239514aeda384b33c7
+run_name: orderly-loon-688
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764522805029
+status: 3
+tags: []
+user_id: torel

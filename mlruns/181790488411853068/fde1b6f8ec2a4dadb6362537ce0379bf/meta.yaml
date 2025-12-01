@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/fde1b6f8ec2a4dadb6362537ce0379bf/artifacts
+end_time: 1764502408558
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: fde1b6f8ec2a4dadb6362537ce0379bf
+run_name: adventurous-cow-109
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764502408482
+status: 3
+tags: []
+user_id: torel
