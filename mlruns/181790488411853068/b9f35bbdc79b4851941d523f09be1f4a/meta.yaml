@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/b9f35bbdc79b4851941d523f09be1f4a/artifacts
+end_time: 1764669259831
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: b9f35bbdc79b4851941d523f09be1f4a
+run_name: upset-pig-349
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764669259482
+status: 3
+tags: []
+user_id: kianm

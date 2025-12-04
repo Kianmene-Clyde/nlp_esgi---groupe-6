@@ -1,0 +1,1 @@
+{'chunk_size': 128, 'overlap': 12, 'small2big': True, 'embedding': 'miniLM'}

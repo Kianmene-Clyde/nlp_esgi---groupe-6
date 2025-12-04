@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/6a8b1fa4284640da928ec57889380620/artifacts
+end_time: 1764837184753
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 6a8b1fa4284640da928ec57889380620
+run_name: languid-sheep-318
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764837184615
+status: 3
+tags: []
+user_id: kianm
