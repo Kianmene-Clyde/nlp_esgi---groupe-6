@@ -175,7 +175,7 @@ def count_tokens(text: str) -> int:
     return len(tokenizer.encode(text))
 
 
-def parse_markdown_sections(md_text: str) -> list[dict[str, str]]:
+def lm(md_text: str) -> list[dict[str, str]]:
     """
     Parses markdown into a list of {'headers': [...], 'content': ...}
     Preserves full header hierarchy (e.g. ["Section", "Sub", "SubSub", ...])

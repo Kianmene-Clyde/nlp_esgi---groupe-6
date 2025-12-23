@@ -110,14 +110,14 @@ def evaluate_retrieval(rag, filenames, df_question):
     return {
         "mrr": mrr,
         "nb_chunks": len(rag.get_chunks()),
-        "df_result": df_question[["question", "text_answering", "rank"]],
+        "df_result": df_question[["question", "text_answering", "rank"]]
     }
 
 
 def calc_acceptable_chunks(chunks, text_to_find):
     acceptable_chunks = []
     for answer in text_to_find:
-        chunks_ok = set(i for i, chunk in enumerate(chunks) if answer in chunk)
+        chunks_ok = set[int](i for i, chunk in enumerate(chunks) if answer in chunk)
         acceptable_chunks.append(chunks_ok)
 
     return acceptable_chunks

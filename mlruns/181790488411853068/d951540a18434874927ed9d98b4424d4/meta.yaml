@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/d951540a18434874927ed9d98b4424d4/artifacts
+end_time: 1765730542866
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: d951540a18434874927ed9d98b4424d4
+run_name: treasured-frog-71
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1765730542843
+status: 3
+tags: []
+user_id: torel
