@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/c28aa77b476a47aa916c17c90b637420/artifacts
+end_time: 1766744197982
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: c28aa77b476a47aa916c17c90b637420
+run_name: masked-asp-987
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766744197933
+status: 3
+tags: []
+user_id: torel

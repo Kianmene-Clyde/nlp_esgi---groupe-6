@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/e48fa6c41a5446ff8845dbcc1a50cc35/artifacts
+end_time: 1766743756935
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: e48fa6c41a5446ff8845dbcc1a50cc35
+run_name: ambitious-bear-985
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766743756902
+status: 3
+tags: []
+user_id: torel

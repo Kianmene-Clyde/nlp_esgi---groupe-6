@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/9d6836d4497d4ea9add219867f9acd29/artifacts
+end_time: 1766682843310
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 9d6836d4497d4ea9add219867f9acd29
+run_name: invincible-bat-63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766682843284
+status: 3
+tags: []
+user_id: torel

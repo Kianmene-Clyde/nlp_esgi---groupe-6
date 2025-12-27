@@ -31,7 +31,6 @@ class RAG:
         self._overlap = overlap
         self._small2big = small2big
         self._embedding_name = embedding
-
         self._embedder = None
         self._loaded_files = set()
         self._texts: list[str] = []
@@ -175,39 +174,62 @@ def count_tokens(text: str) -> int:
     return len(tokenizer.encode(text))
 
 
-def lm(md_text: str) -> list[dict[str, str]]:
+def parse_markdown_sections(md_text: str) -> list[dict[str, str]]:
     """
     Parses markdown into a list of {'headers': [...], 'content': ...}
     Preserves full header hierarchy (e.g. ["Section", "Sub", "SubSub", ...])
+
+    Example:
+        Input:  "# Plot\\nThe story...\\n## Act 1\\nScene intro..."
+        Output: [
+            {"headers": ["Plot"], "content": "The story...\\n"},
+            {"headers": ["Plot", "Act 1"], "content": "Scene intro...\\n"}
+        ]
     """
+    # Regex to match markdown headers: captures the # symbols (group 1) and header text (group 2)
+    # Examples: "# Title" → group(1)="#", group(2)="Title"
+    #           "### Subsection" → group(1)="###", group(2)="Subsection"
     pattern = re.compile(r"^(#{1,6})\s*(.+)$")
     lines = md_text.splitlines()
 
-    sections = []
+    sections = []  # Final list of parsed sections
+
+    # Stack to track header hierarchy (e.g., ["Plot", "Act 1"] for nested headers)
     header_stack = []
+
+    # Current section being built (accumulates content until next header)
     current_section = {"headers": [], "content": ""}
 
     for line in lines:
         match = pattern.match(line)
+
         if match:
+            # --- This line is a header ---
+
+            # Determine header level: # = 1, ## = 2, ### = 3, etc.
             level = len(match.group(1))
             title = match.group(2).strip()
 
-            # Save previous section
+            # Save the previous section if it has content (avoid empty sections)
             if current_section["content"]:
                 sections.append(current_section)
 
-            # Adjust the header stack
+            # Adjust the header stack to reflect the new hierarchy level
+            # e.g., if we were at ["A", "B", "C"] (level 3) and encounter a level 2 header,
+            # we slice to ["A"] then append the new title → ["A", "NewTitle"]
             header_stack = header_stack[: level - 1]
             header_stack.append(title)
 
+            # Start a new section with the current header hierarchy
             current_section = {
-                "headers": header_stack.copy(),
+                "headers": header_stack.copy(),  # Copy to avoid reference issues
                 "content": "",
             }
         else:
+            # --- This line is regular content → append to current section ---
             current_section["content"] += line + "\n"
 
+    # Don't forget the last section (no header follows it to trigger save)
     if current_section["content"]:
         sections.append(current_section)
 
@@ -229,6 +251,7 @@ def chunk_markdown(md_text: str, chunk_size: int = 128, overlap: int = 0) -> lis
         step = chunk_size - overlap
 
         token_chunks = []
+        # Chunk tokenized section
         for i in range(0, len(tokens), step):
             chunk = tokens[i: i + chunk_size]
             if chunk:

@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/d330e190d8a646b49d6c7634a79823a7/artifacts
+end_time: 1766743634268
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: d330e190d8a646b49d6c7634a79823a7
+run_name: unequaled-jay-487
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766743634221
+status: 3
+tags: []
+user_id: torel

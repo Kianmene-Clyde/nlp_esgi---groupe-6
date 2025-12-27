@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/f14f5029b3bb464b8cc7d24721576e6f/artifacts
+end_time: 1766743531221
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: f14f5029b3bb464b8cc7d24721576e6f
+run_name: fearless-shark-651
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766743531130
+status: 3
+tags: []
+user_id: torel

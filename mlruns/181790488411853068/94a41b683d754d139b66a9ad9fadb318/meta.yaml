@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/94a41b683d754d139b66a9ad9fadb318/artifacts
+end_time: 1766743918914
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 94a41b683d754d139b66a9ad9fadb318
+run_name: fun-moth-447
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766743918862
+status: 3
+tags: []
+user_id: torel
