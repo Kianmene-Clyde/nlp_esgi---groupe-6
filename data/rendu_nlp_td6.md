@@ -7,7 +7,7 @@ Pour commencer nos tests, nous avons commencé avec différentes tailles de chun
 Pour considérer la reply accuracy nous prenons en compte percent_correct plutôt que reply_similarity 
 car percent_correct est le ponrcentage des réponses avec une reply_similarity supérieure à 0.7 tandis que reply_similarity est la moyenne des reply similarity entre les réponses attendues et obtenues et peut donc être faussé s'il ya des outlyers.
 
-Nous observons que  la taille des chunks est grande plus le score MRR est bon puis le score rechute entre une chunk_size de 512 et 1024.
+Nous observons que la taille des chunks est grande plus le score MRR est bon puis le score rechute entre une chunk_size de 512 et 1024.
 Néanmoins, les percent_correct sont identiques entre les chunk_size 128 et 1024.
 
 

@@ -28,6 +28,9 @@ def get_model(config):
 class RAG:
     def __init__(self, chunk_size: int = 256, overlap: int = 0, small2big: bool = False, embedding: str = "miniLM"):
         self._chunk_size = chunk_size
+        if overlap > 0 and small2big:
+            overlap = 0
+            print("overlap is set to 0 because small2big is True")
         self._overlap = overlap
         self._small2big = small2big
         self._embedding_name = embedding
@@ -143,28 +146,38 @@ Answer:"""
             idxs = list(np.argsort(sim_scores[0]))[-top_k:]
             return [self._chunks[i] for i in idxs]
 
-        # small2Big = True → on prend plus de petits chunks et on fusionne
+        # small2Big = True → on sélectionne les 10 chunks les plus similaires et on les fusionne avec leurs chunks adjacents s'ils sont dans le top 10.
         top_k_small = 10
         idxs = list(np.argsort(sim_scores[0]))[-top_k_small:]
         idxs = sorted(idxs)  # on remet dans l'ordre du texte
-
-        merged_chunks: list[str] = []
+        
+        # Fusion des meilleurs chunks avec chunks adjacents
+        # On garde (merged_chunk, max_sim_score) pour trier ensuite par pertinence
+        merged_chunks_with_scores: list[tuple[str, float]] = []
+        
+        # Initialisation du groupe actuel avec le premier indice
         current_group = [idxs[0]]
-
         for idx in idxs[1:]:
             if idx == current_group[-1] + 1:
                 # même zone du texte → on agrandit le groupe
                 current_group.append(idx)
             else:
                 # on ferme le groupe et on crée un gros chunk
-                merged_chunks.append("\n".join(self._chunks[i] for i in current_group))
+                merged_text = "\n".join(self._chunks[i] for i in current_group)
+                max_score = max(sim_scores[0][i] for i in current_group)
+                merged_chunks_with_scores.append((merged_text, max_score))
                 current_group = [idx]
 
         # dernier groupe
-        merged_chunks.append("\n".join(self._chunks[i] for i in current_group))
+        merged_text = "\n".join(self._chunks[i] for i in current_group)
+        max_score = max(sim_scores[0][i] for i in current_group)
+        merged_chunks_with_scores.append((merged_text, max_score))
+
+        # Tri par score de similarité décroissant
+        merged_chunks_with_scores.sort(key=lambda x: x[1], reverse=True)
 
         # on limite à 5 "gros" chunks max pour le prompt
-        return merged_chunks[:5]
+        return [chunk for chunk, _ in merged_chunks_with_scores[:5]]
 
 
 # ---------------------------
