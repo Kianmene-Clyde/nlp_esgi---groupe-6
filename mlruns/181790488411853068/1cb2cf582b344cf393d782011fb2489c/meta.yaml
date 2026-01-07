@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/1cb2cf582b344cf393d782011fb2489c/artifacts
+end_time: 1767820232995
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 1cb2cf582b344cf393d782011fb2489c
+run_name: loud-gnu-82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767820232962
+status: 3
+tags: []
+user_id: torel

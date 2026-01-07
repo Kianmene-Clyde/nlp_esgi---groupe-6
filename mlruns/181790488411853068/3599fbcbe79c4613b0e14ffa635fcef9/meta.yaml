@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/3599fbcbe79c4613b0e14ffa635fcef9/artifacts
+end_time: 1767820272448
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 3599fbcbe79c4613b0e14ffa635fcef9
+run_name: treasured-chimp-419
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767820272431
+status: 3
+tags: []
+user_id: torel

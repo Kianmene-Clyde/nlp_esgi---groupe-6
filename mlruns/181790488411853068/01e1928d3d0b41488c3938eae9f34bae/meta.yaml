@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/01e1928d3d0b41488c3938eae9f34bae/artifacts
+end_time: 1767823621092
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 01e1928d3d0b41488c3938eae9f34bae
+run_name: big-penguin-673
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767823621069
+status: 3
+tags: []
+user_id: torel

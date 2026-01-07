@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/2063cc550dc848ae9ddc92d883450047/artifacts
+end_time: 1767823412503
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 2063cc550dc848ae9ddc92d883450047
+run_name: bald-shoat-691
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767823412474
+status: 3
+tags: []
+user_id: torel

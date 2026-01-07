@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/3ab3bae9dbfa4fda94c498aa590d1141/artifacts
+end_time: 1767820330851
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 3ab3bae9dbfa4fda94c498aa590d1141
+run_name: invincible-calf-42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767820330827
+status: 3
+tags: []
+user_id: torel

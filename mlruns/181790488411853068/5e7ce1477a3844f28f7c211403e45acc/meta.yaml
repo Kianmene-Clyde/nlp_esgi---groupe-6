@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/5e7ce1477a3844f28f7c211403e45acc/artifacts
+end_time: 1767820633763
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 5e7ce1477a3844f28f7c211403e45acc
+run_name: welcoming-ant-484
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767820633741
+status: 3
+tags: []
+user_id: torel

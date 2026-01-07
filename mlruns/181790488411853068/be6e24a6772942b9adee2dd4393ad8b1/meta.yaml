@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/be6e24a6772942b9adee2dd4393ad8b1/artifacts
+end_time: 1767823452576
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: be6e24a6772942b9adee2dd4393ad8b1
+run_name: gifted-ant-624
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767823452555
+status: 3
+tags: []
+user_id: torel

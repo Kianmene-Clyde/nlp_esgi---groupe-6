@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/7a00ac9cda7c4fc1b37035a13e5a7354/artifacts
+end_time: 1767820898180
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: 7a00ac9cda7c4fc1b37035a13e5a7354
+run_name: bemused-fowl-307
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767820898159
+status: 3
+tags: []
+user_id: torel

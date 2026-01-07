@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/b7ffd82d95b84d8482250ab14cfa0130/artifacts
+end_time: 1767823551974
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: b7ffd82d95b84d8482250ab14cfa0130
+run_name: luminous-sow-84
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767823551949
+status: 3
+tags: []
+user_id: torel

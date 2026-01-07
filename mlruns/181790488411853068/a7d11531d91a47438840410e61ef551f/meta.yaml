@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/a7d11531d91a47438840410e61ef551f/artifacts
+end_time: 1767820264161
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: a7d11531d91a47438840410e61ef551f
+run_name: funny-colt-750
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767820264142
+status: 3
+tags: []
+user_id: torel

@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/dc7ea1b1d7174fd298644437fe42674a/artifacts
+end_time: 1767823443577
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: dc7ea1b1d7174fd298644437fe42674a
+run_name: sneaky-seal-729
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767823443554
+status: 3
+tags: []
+user_id: torel

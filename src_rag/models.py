@@ -26,7 +26,7 @@ def get_model(config):
 
 
 class RAG:
-    def __init__(self, chunk_size: int = 256, overlap: int = 0, small2big: bool = False, embedding: str = "miniLM"):
+    def __init__(self, chunk_size: int = 256, overlap: int = 0, small2big: bool = False, embedding: str = "miniLM", add_metadata: bool = False):
         self._chunk_size = chunk_size
         if overlap > 0 and small2big:
             overlap = 0
@@ -40,6 +40,7 @@ class RAG:
         self._chunks: list[str] = []
         self._corpus_embedding: np.ndarray | None = None
         self._client = CLIENT
+        self._add_metadata = add_metadata
 
     # ---------------------------
     # Chargement & chunks
@@ -64,7 +65,7 @@ class RAG:
 
     def _compute_chunks(self, texts):
         return sum(
-            (chunk_markdown(txt, chunk_size=self._chunk_size, overlap=self._overlap) for txt in texts),
+            (chunk_markdown(txt, chunk_size=self._chunk_size, overlap=self._overlap, add_metadata=self._add_metadata) for txt in texts),
             [],
         )
 
@@ -249,7 +250,7 @@ def parse_markdown_sections(md_text: str) -> list[dict[str, str]]:
     return sections
 
 
-def chunk_markdown(md_text: str, chunk_size: int = 128, overlap: int = 0) -> list[str]:
+def chunk_markdown(md_text: str, chunk_size: int = 128, overlap: int = 0, add_metadata: bool = False) -> list[str]:
     """
     Découpe le texte markdown en chunks avec overlap optionnel.
     """
@@ -260,7 +261,11 @@ def chunk_markdown(md_text: str, chunk_size: int = 128, overlap: int = 0) -> lis
     chunks: list[str] = []
 
     for section in parsed_sections:
-        tokens = tokenizer.encode(section["content"])
+        if add_metadata:
+            header_str = " > ".join(section['headers'])
+            tokens = tokenizer.encode(f"[{header_str}]\n{section['content']}")
+        else:
+            tokens = tokenizer.encode(section["content"])
         step = chunk_size - overlap
 
         token_chunks = []

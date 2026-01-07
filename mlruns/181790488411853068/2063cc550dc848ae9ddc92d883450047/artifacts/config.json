@@ -1,0 +1,7 @@
+{
+  "model": {
+    "chunk_size": 128,
+    "overlap": 12,
+    "add_metadata": true
+  }
+}

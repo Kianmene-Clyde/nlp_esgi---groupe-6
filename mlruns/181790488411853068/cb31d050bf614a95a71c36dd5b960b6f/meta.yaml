@@ -1,0 +1,14 @@
+artifact_uri: file:///home/torel/Projects/NLP/nlp_esgi---groupe-6/mlruns/181790488411853068/cb31d050bf614a95a71c36dd5b960b6f/artifacts
+end_time: 1767823512518
+entry_point_name: ''
+experiment_id: '181790488411853068'
+lifecycle_stage: active
+run_id: cb31d050bf614a95a71c36dd5b960b6f
+run_name: nebulous-dove-953
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767823512491
+status: 3
+tags: []
+user_id: torel
